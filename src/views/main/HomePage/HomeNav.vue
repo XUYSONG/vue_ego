@@ -100,6 +100,12 @@ export default {
               url:"http://iwenwiki.com",
               hot:false
             },
+            {
+              id:6,
+              name:'火狐',
+              url:"http://iwenwiki.com",
+              hot:false
+            },
           ]
         },
       ]
@@ -112,7 +118,7 @@ export default {
 
   .index-left-block{
     margin:15px;
-    background-color: #bfa;
+    background-color: white;
     box-shadow: 0 0 1px #ddd;
 
   }
@@ -123,7 +129,7 @@ export default {
     background-color: #ddd;
   }
   .index-left-block h2{
-    background:#4fc08d;
+    background:#3d9e72;
     color: #fff;
     padding: 10px 15px;
     margin-bottom: 20px;

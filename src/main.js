@@ -8,8 +8,10 @@ import './router/permission.js'
 import './utils/init.js'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+import api from './api'
+import "./utils/eventbus.js"
 
-
+Vue.prototype.$api = api;
 // Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
 

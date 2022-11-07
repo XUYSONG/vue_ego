@@ -41,6 +41,6 @@ export default {
   }
   .index-right{
     float: left;
-    width: 900pz;
+    width: 900px;
   }
 </style>

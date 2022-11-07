@@ -8,6 +8,7 @@
       text-color="#fff"
       active-text-color="#ffd04b"
       router
+      @select="handleSelect"
     >
       <el-menu-item index="/">首页</el-menu-item>
       <el-menu-item index="product">商品管理</el-menu-item>
@@ -33,12 +34,21 @@ export default {
   computed:{
     ...mapState("login",["user"])
   },
+  mounted(){
+    if(sessionStorage.getItem("key")){
+      this.active = sessionStorage.getItem("key")
+    }
+  },
   methods:{
     ...mapMutations("login",["setUser"]),
     loginoutHander(){
       this.setUser({})
       localStorage.removeItem('ego')
       this.$router.push('/login')
+    },
+    handleSelect(key,keypath){
+      sessionStorage.setItem("key",key)
+      console.log(key);
     }
   }
 }

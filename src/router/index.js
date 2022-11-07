@@ -4,16 +4,16 @@ import VueRouter from 'vue-router'
 // 导入需要的组件
 import Home from '../views/main/HomePage/Home.vue'
 import Layout from '../views/Layout.vue'
-import Product from '../views/main//Product.vue'
-import Params from '../views/main/Params.vue'
-import ADCategory from '../views/main/ADCategory.vue'
+import Product from '../views/main//Product'
+import Params from '../views/main/Params/index.vue'
+import ADCategory from '../views/main/ADCategory/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:'/',
-    name:'Layout',
+    // name:'Layout',
     component:Layout,
     children:[
       {
@@ -50,6 +50,33 @@ const routes = [
         meta:{
           isLogin:true
         }
+      },
+      {
+        path:'details',
+        // name:'Details',
+        component:()=>import("@/views/main/HomePage/sub/Details.vue"),
+        children:[
+          {
+            path:'openproduct',
+            name:'OpenProduct',
+            component:()=>import('@/views/main/HomePage/sub/openproduct.vue')
+          },
+          {
+            path:'golife',
+            name:'golife',
+            component:()=>import('@/views/main/HomePage/sub/golife.vue')
+          },
+          {
+            path:'heigh',
+            name:'OpenPrheighoduct',
+            component:()=>import('@/views/main/HomePage/sub/heigh.vue')
+          },
+          {
+            path:'logo',
+            name:'logo',
+            component:()=>import('@/views/main/HomePage/sub/logo.vue')
+          },
+        ]
       }
 
     ]

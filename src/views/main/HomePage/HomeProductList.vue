@@ -4,11 +4,15 @@
       class="index-board-item"
       v-for="(item,index) in buyData"
       :key="index"
-      :class="['index-board-' + item.url]"
+      :class="['index-board-' + item.url,{'line-last':index%2 !==0}]"
     >
     <div class="index-board-item-inner">
       <h2>{{item.title}}</h2>
       <p>{{item.desc}}</p>
+      <div class="index-board-button">
+        <router-link :to="/details/+item.url" class="button">立即购买</router-link>
+        
+      </div>
     </div>
       
     </div>
@@ -48,7 +52,7 @@ export default {
 
 <style lang="less" scoped>
 .index-board-list{
-  width: 400px;
+  // width: 400px;
   overflow: hidden;
   margin-top: 15px;
 
@@ -58,7 +62,7 @@ export default {
   width:400px;
   background: #fff;
   box-shadow: 0 0 1px #ddd;
-  padding: 20px 0;
+  padding: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
 
@@ -104,7 +108,7 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.bottom{
+.button{
   background: #4fc08d;
   color: #fff;
   display: inline-block;

@@ -15,7 +15,7 @@ export default {
   width: 900px;
   height: 350px;
   margin-top: 15px;
-  background: #bfa;
+  background: white;
 }
 
 </style>
